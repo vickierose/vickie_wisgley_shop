@@ -14,8 +14,12 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|ico)$/,
-        use: ['file-loader'],
-    }
+        use: ['file-loader']
+      },
+      {
+        test: [/\.eot$/, /\.ttf$/, /\.svg$/, /\.woff$/, /\.woff2$/],
+        use: ['file-loader']
+      }
     ]
   },
   resolve: {
