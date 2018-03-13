@@ -6,7 +6,9 @@ export default class Shop extends Component {
   }
   render() {
     return (
-      <p>Shop</p>
+      <div className="page">
+        <h1>Shop</h1>
+      </div>
     );
   }
 };
