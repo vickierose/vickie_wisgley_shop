@@ -1,0 +1,10 @@
+@import '../styles/vars.scss';
+.logo {
+  text-align: center;
+  padding: 40px 0;
+
+  h1, h2 {
+    font-family: $decorative-font;
+    color: $text-main-color;
+  }
+}
