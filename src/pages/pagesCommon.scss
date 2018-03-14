@@ -14,6 +14,13 @@
   p {
     font-family: $main-font;
   }
+
+  .content {
+    font-family: $main-font;
+    a {
+      color: $text-main-color;
+    }
+  }
 }
 
 .greet {
