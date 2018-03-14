@@ -8,6 +8,7 @@ import PaymentDeliveryDetails from './pages/PaymentDeliveryDetails';
 import Contacts from './pages/Contacts';
 import Navigation from './elements/Navigation';
 import Logo from './elements/Logo';
+import Footer from './elements/Footer';
 
 export default class App extends Component {
   constructor(props){
@@ -25,6 +26,7 @@ export default class App extends Component {
             <Route path='/delivery' component={PaymentDeliveryDetails} />
             <Route path='/contacts' component={Contacts} />
           </div>
+          <Footer />
         </div>
       </Router>
     );

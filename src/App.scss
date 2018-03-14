@@ -1,4 +1,6 @@
 .wrapper {
   height: 100vh;
   background: url('./pictures/polka_dots.png');
+  display: grid;
+  grid-template-rows: 2fr 1fr 100fr 1fr;
 }
