@@ -1,5 +1,5 @@
 const initialStore = {
-  shoppingItems: [],
+  shop: {},
   cart: [],
   activeCategories: [],
   allCategories: []

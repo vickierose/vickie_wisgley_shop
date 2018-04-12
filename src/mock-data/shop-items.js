@@ -31,4 +31,6 @@ const shopItems = [
     currency: 'UAH',
     imageUrl: 'http://res.cloudinary.com/dfmb0wsun/image/upload/v1523529857/dog_d5tj0x.jpg'
   }
-]
+];
+
+export default shopItems;
