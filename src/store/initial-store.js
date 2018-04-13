@@ -1,8 +1,7 @@
 const initialStore = {
   shop: {},
-  cart: [],
-  activeCategories: [],
-  allCategories: []
+  // cart: [],
+  // categories: {}
 };
 
 export default initialStore;

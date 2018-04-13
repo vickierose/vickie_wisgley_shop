@@ -19,6 +19,6 @@ export const getShoppingItemsFailure = err => ({
 });
 
 export const getShoppingItems = () => dispatch => {
-  dispath(getShoppingItemsRequest());
+  dispatch(getShoppingItemsRequest());
   dispatch(getShoppingItemsSuccess(shopItems));
 }

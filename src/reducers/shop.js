@@ -18,6 +18,13 @@ function shop (state={}, action) {
         loading: false,
         error: null
       }
+    case GET_SHOPPING_ITEMS_FAILURE:
+      return {
+        ...state,
+        data: null,
+        loading: false,
+        error: action.error
+      }
     default:
       return state
   }

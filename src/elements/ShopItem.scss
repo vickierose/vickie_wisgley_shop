@@ -1,0 +1,26 @@
+@import '../styles/vars.scss';
+
+.ui.cards > .ui.card.shop-item {
+  background-color: $block-background-color;
+  .header {
+    font-family: $main-font;
+  }
+  .shop-item-picture {
+    min-height: 60%;
+    max-height: 60%;
+  }
+  .price-tag-btn {
+    background-color: $block-background-color;
+    border: 1px solid $interactive-components-bg;
+    color: $interactive-components-bg;
+
+    &:hover {  
+      background-color: $interactive-components-bg;
+      color: $text-main-color;
+    }
+    &:active {
+      background-color: $block-background-color;
+      color: $text-main-color;
+    }
+  }
+}
