@@ -14,7 +14,7 @@ export const getShoppingItemsSuccess = data => ({
 });
 
 export const getShoppingItemsFailure = err => ({
-  type:GET_SHOPPING_ITEMS_SUCCESS,
+  type:GET_SHOPPING_ITEMS_FAILURE,
   error: err
 });
 

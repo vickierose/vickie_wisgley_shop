@@ -1,7 +1,7 @@
 const initialStore = {
   shop: {},
   // cart: [],
-  // categories: {}
+  categories: {}
 };
 
 export default initialStore;
