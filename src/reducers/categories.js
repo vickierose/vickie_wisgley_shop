@@ -30,7 +30,13 @@ function categories (state={}, action) {
     case SELECT_CATEGORY:
       return {
         ...state,
-        selected: [category]
+        selected: [...state.selected, action.category]
+      }
+    case UNSELECT_CATEGORY:
+      const newSelected = state.selected.splice(state.selected.indexOf(action.category), 1)
+      return {
+        ...state,
+        selected: [...newSelected]
       }
     default:
       return state
