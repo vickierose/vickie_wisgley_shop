@@ -18,6 +18,7 @@ function categories (state={}, action) {
         ...state,
         loading: false,
         all: action.data,
+        selected: [],
         error: null
       };
     case GET_ALL_CATEGORIES_FAILURE:
@@ -25,7 +26,7 @@ function categories (state={}, action) {
         ...state,
         loading: false,
         error: action.error,
-        all: null
+        all: null,
       }
     case SELECT_CATEGORY:
       return {
@@ -33,7 +34,8 @@ function categories (state={}, action) {
         selected: [...state.selected, action.category]
       }
     case UNSELECT_CATEGORY:
-      const newSelected = state.selected.splice(state.selected.indexOf(action.category), 1)
+      const newSelected = state.selected.slice();
+      newSelected.splice(state.selected.indexOf(action.category), 1)
       return {
         ...state,
         selected: [...newSelected]

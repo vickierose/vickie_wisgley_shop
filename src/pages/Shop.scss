@@ -2,7 +2,10 @@
 
 .ui.label.category-label {
   background-color: $block-background-color;
+  border: 1px solid $block-background-color;
+  cursor: pointer;
   &-selected {
     background-color: $interactive-components-bg;
+    cursor: pointer;
   }
 }

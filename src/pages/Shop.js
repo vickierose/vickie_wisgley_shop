@@ -9,8 +9,10 @@ export default class Shop extends Component {
     super(props);
 
     this.getShopItems = this.getShopItems.bind(this);
+    this.getCategoriesList = this.getCategoriesList.bind(this);
+    this.onCategoryClick= this.onCategoryClick.bind(this);
   }
-  componentWillMount() {
+  componentDidMount() {
     this.props.getShoppingItems();
     this.props.getAllCategories();
   }
@@ -25,8 +27,18 @@ export default class Shop extends Component {
   getCategoriesList() {
     if(this.props.categories && this.props.categories.all) {
       return this.props.categories.all.map(item => (
-        <Label className="category-label" key={item}>{item}</Label>
+        this.props.categories.selected.indexOf(item) !== -1
+          ? <Label className="category-label category-label-selected" key={item} onClick={() => this.onCategoryClick(item)}>{item}</Label>
+          : <Label className="category-label" key={item} onClick={() => this.onCategoryClick(item)}>{item}</Label>
       ))
+    }
+  }
+
+  onCategoryClick(category) {
+    if (this.props.categories.selected.indexOf(category) === -1) {
+      this.props.selectCategory(category);
+    } else {
+      this.props.unselectCategory(category);
     }
   }
 
