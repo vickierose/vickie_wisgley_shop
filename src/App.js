@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Grid } from 'semantic-ui-react'
 import './App.scss';
 
 import Home from './pages/Home';
@@ -17,7 +18,8 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <div className="wrapper">
+        <Grid className="wrapper">
+          <Grid.Column>
           <Logo />
           <Navigation />
           <div className="main">
@@ -27,7 +29,8 @@ export default class App extends Component {
             <Route path='/contacts' component={Contacts} />
           </div>
           <Footer />
-        </div>
+          </Grid.Column>
+        </Grid>
       </Router>
     );
   }

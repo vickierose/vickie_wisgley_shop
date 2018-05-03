@@ -6,12 +6,12 @@ import './pagesCommon.scss';
 
 const PaymentDeliveryDetails = () => (
   <div className="page">
-    <Container text className='greet'>
+    <Container className='greet'>
 			<Header as='h2'>Оплата и доставка</Header>
 			<p>В этом разделе сайта вы найдете всю интересующую вас информацию по вопросам оплаты и доставки заказа</p>
     </Container>
 
-    <Container text>
+    <Container>
       <p>Доставка осуществляется во все города Украины следующими способами:</p>
       <List as="ul">
         <List.Item as='li' className='content'>Самовывоз в г.Львов</List.Item>
@@ -21,7 +21,7 @@ const PaymentDeliveryDetails = () => (
       <p>Стоимость доставки согласно тарифам компании-перевозчика.</p>
     </Container>
 
-    <Container text>
+    <Container>
       <p>Оплата проводится следующими путями:</p>
       <List as="ul">
         <List.Item as='li' className='content'>Наличными при самовывозе</List.Item>
@@ -33,7 +33,7 @@ const PaymentDeliveryDetails = () => (
 			<p>При доставке УкрПочтой оплата проводится только на карту ПриватБанка.</p>
     </Container>
 
-    <Container text>
+    <Container>
       <p>Если у вас возникли другие вопросы, обращайтесь <NavLink to='/contacts'>к автору работ.</NavLink></p>
     </Container>
   </div>

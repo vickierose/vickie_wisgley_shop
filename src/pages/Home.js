@@ -4,7 +4,7 @@ import './pagesCommon.scss';
 
  const Home = () => (
    <div className="page">
-    <Container text className='greet'>
+    <Container className='greet'>
       <Header as='h3'>Добро пожаловать <br/> в хенд-мейд студию</Header>
 			<Header as='h2'>Vickie Wisgley!</Header>
 			<p>Здесь вы можете приобрести чудесные вещи ручной работы из наличия или же заказать уникальное изделие по собственным идеям. </p>

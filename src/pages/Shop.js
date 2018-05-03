@@ -45,7 +45,7 @@ export default class Shop extends Component {
   render() {
     return (
       <div className="page">
-        <Container text className='greet'>
+        <Container className='greet'>
           <Header as='h2'>Магазин</Header>
           <p>Приветствуем в нашем магазинчике!</p>
           <p>Здесь вы можете найти различные чудесинки ручной работы: 
@@ -54,14 +54,14 @@ export default class Shop extends Component {
           <p>Осматривайтесь и выбирайте!</p>
         </Container>
 
-        <Container text className="invisible-container">
+        <Container className="invisible-container">
           <Label.Group>
             {this.getCategoriesList()}
           </Label.Group>
         </Container>
 
-        <Container text className="invisible-container">
-          <Card.Group itemsPerRow={3} stackable>
+        <Container className="invisible-container">
+          <Card.Group doubling stackable>
             {this.getShopItems()}
           </Card.Group>
         </Container>

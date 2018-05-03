@@ -26,7 +26,7 @@ export default class Contacts extends Component {
   render () { 
     return (
       <div className="page">
-        <Container text className='greet'>
+        <Container className='greet'>
           <Header as='h2'>Контакты</Header>
           <p>
             В этом разделе вы найдете контактные данные автора,
@@ -34,7 +34,7 @@ export default class Contacts extends Component {
             в частности касательно заказа индивидуальных работ
           </p>
         </Container>
-        <Container text>
+        <Container>
           <List size='big'>
             {this.getContactsList()}
           </List>

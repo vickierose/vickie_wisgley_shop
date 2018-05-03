@@ -1,6 +1,9 @@
 @import '../styles/vars.scss';
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
