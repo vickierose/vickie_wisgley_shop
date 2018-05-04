@@ -8,10 +8,8 @@ const ShopItem = ({item}) => {
       <Image src={item.imageUrl} className="shop-item-picture"/>
       <Card.Content>
         <Card.Header as='h3'>{item.name}</Card.Header>
-        <Card.Content extra>
-          <Button as='div' fluid className="price-tag-btn">{`${item.price} ${item.currency}`}</Button>
-        </Card.Content>
       </Card.Content>
+      <Button as='div' attached="bottom" className="price-tag-btn">{`${item.price} ${item.currency}`}</Button>
     </Card>
   )
 };

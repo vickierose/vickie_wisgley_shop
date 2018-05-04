@@ -61,7 +61,7 @@ export default class Shop extends Component {
         </Container>
 
         <Container className="invisible-container">
-          <Card.Group doubling stackable>
+          <Card.Group doubling stackable centered itemsPerRow={4}>
             {this.getShopItems()}
           </Card.Group>
         </Container>

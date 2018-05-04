@@ -4,15 +4,18 @@
   background-color: $block-background-color;
   .header {
     font-family: $main-font;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .shop-item-picture {
-    min-height: 60%;
-    max-height: 60%;
+    min-height: 80%;
+    max-height: 80%;
   }
   .price-tag-btn {
     background-color: $block-background-color;
-    border: 1px solid $interactive-components-bg;
+    border-top: 1px solid $interactive-components-bg;
     color: $interactive-components-bg;
+    min-height: 40px;
 
     &:hover {  
       background-color: $interactive-components-bg;

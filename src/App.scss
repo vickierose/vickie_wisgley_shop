@@ -1,7 +1,13 @@
-.wrapper {
+.ui.grid.wrapper {
   height: 100%;
   background: url('./pictures/polka_dots.png');
-  
+  margin: 0;
+
+  & > .column:not(.row) {
+    padding: 0;
+    display: grid;
+    grid-template-rows: 150px 50px 1fr 50px;
+  }
   .main {
     overflow: auto;
   }
