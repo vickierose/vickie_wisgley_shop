@@ -7,18 +7,27 @@ import './Shop.scss';
 export default class Shop extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      filteredShoppingItems: []
+    }
 
     this.getShopItems = this.getShopItems.bind(this);
     this.getCategoriesList = this.getCategoriesList.bind(this);
     this.onCategoryClick= this.onCategoryClick.bind(this);
+    this.filterItems = this.filterItems.bind(this);
   }
+
   componentDidMount() {
     this.props.getShoppingItems();
     this.props.getAllCategories();
   }
 
   getShopItems() {
-    if (this.props.shop && this.props.shop.data){
+    if (this.state && this.state.filteredShoppingItems.length){
+      return this.state.filteredShoppingItems.map(item => (
+        <ShopItem item={item} key={item.id}/>
+      ))
+    } else if (this.props.shop && this.props.shop.data) {
       return this.props.shop.data.map(item => (
         <ShopItem item={item} key={item.id}/>
       ))
@@ -34,12 +43,25 @@ export default class Shop extends Component {
     }
   }
 
+  filterItems(categories, items) {
+    if(!categories.length) {
+      this.setState({filteredShoppingItems: items});
+      return items
+    }
+    const filtered = items.filter(item => categories.indexOf(item.category) !== -1);
+    this.setState({filteredShoppingItems: filtered});
+    return filtered;
+  }
+
   onCategoryClick(category) {
     if (this.props.categories.selected.indexOf(category) === -1) {
       this.props.selectCategory(category);
     } else {
       this.props.unselectCategory(category);
     }
+    setTimeout(() => {
+      this.filterItems(this.props.categories.selected, this.props.shop.data)
+    }, 0)
   }
 
   render() {
