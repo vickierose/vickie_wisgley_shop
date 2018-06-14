@@ -1,3 +1,5 @@
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -8,6 +10,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader']
       },
       { test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'] 
@@ -22,16 +28,14 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ['*', '.js', '.jsx']
-  },
-  output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    })
+  ],
   devServer: {
-    contentBase: './dist',
+    contentBase: './src',
     port: 5000,
     historyApiFallback: {
       index: '/index.html'
