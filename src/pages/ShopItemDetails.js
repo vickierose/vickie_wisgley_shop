@@ -1,15 +1,39 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Container, Grid, Image, Header, Label, Button } from 'semantic-ui-react';
 import './pagesCommon.scss';
 import './ShopItemDetails.scss';
 
 class ShopItemDetails extends Component {
+
   constructor(props) {
     super(props);
-    this.state = {  };
+    this.state = {data: {}};
   }
+  
+  componentDidMount() {
+    if(this.props.shop && this.props.shop.data){
+      const {match} = this.props;
+      const currentItem = this.getItemData(match.params.itemId);
+      this.setState((state) => ({ data: currentItem }));
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(!prevProps.shop.data || prevProps.shop.data.length !== this.props.shop.data.length) {
+      const {match} = this.props;
+      const currentItem = this.getItemData(match.params.itemId);
+      this.setState((state) => ({ data: currentItem }));
+    }
+  }
+
+  getItemData(id) {
+    return this.props.shop.data.filter(item => item.id === id)[0];
+  }
+
   render() {
-    const { data } = this.props;
+    const {data} = this.state;
+
     return (
       <Container>
         <Grid>
@@ -36,4 +60,8 @@ class ShopItemDetails extends Component {
   }
 }
 
-export default ShopItemDetails;
+const mapStateToProps = state => ({
+  shop: state.shop
+});
+
+export default connect(mapStateToProps, null)(ShopItemDetails);

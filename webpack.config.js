@@ -4,6 +4,7 @@ module.exports = {
   entry: [
     './src/index.js'
   ],
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
@@ -36,9 +37,13 @@ module.exports = {
   ],
   devServer: {
     contentBase: './src',
+    publicPath: '/',
     port: 5000,
     historyApiFallback: {
       index: '/index.html'
     }
+  },
+  output: {
+    publicPath: '/'
   }
 };

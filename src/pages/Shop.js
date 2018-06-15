@@ -21,7 +21,7 @@ export default class Shop extends Component {
   }
 
   componentDidMount() {
-    this.props.getShoppingItems();
+    // this.props.getShoppingItems();
     this.props.getAllCategories();
   }
 
@@ -73,10 +73,6 @@ export default class Shop extends Component {
     )
   }
 
-  getSpecificItemData(id) {
-    return this.props.shop.data.filter(item => item.id === id)[0];
-  }
-
   filterItems(categories, items) {
     if(!categories.length) {
       this.setState({filteredShoppingItems: items});
@@ -101,7 +97,7 @@ export default class Shop extends Component {
   render() {
     return (
       <div className="page">
-        <Route path={`${this.props.match.url}/:itemId`} render={({match}) => <ShopItemDetails data={this.getSpecificItemData(match.params.itemId)}/>}/>
+        <Route path={`${this.props.match.url}/:itemId`} component={ShopItemDetails}/>
         <Route exact path={this.props.match.url} render={() => this.ShopLanding} />
       </div> 
     );

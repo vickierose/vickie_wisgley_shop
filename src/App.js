@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react'
 import './App.scss';
@@ -11,10 +12,18 @@ import Navigation from './elements/Navigation';
 import Logo from './elements/Logo';
 import Footer from './elements/Footer';
 
-export default class App extends Component {
+import {getShoppingItems} from './actions/shop';
+
+class App extends Component {
   constructor(props){
     super(props);
   }
+
+  componentDidMount() {
+    this.props.getShoppingItems();
+    // this.props.getAllCategories();
+  }
+
   render() {
     return (
       <Router>
@@ -35,3 +44,14 @@ export default class App extends Component {
     );
   }
 };
+
+const mapStateToProps = state => ({
+  shop: state.shop
+});
+const mapDispatchToProps = dispatch => ({
+  getShoppingItems() {
+    return dispatch(getShoppingItems())
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
