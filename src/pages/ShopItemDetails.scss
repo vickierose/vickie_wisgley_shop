@@ -1,0 +1,25 @@
+@import '../styles/vars.scss';
+
+.item-description {
+  margin: 20px;
+}
+.price-buy-button-wrapper {
+  margin: 0 20px;
+  .ui.tag.label {
+    margin-right: 20px;
+    padding: 0.64em .833em;
+    font-family: $main-font;
+    color: $text-main-color;
+    background-color: $interactive-components-bg;
+
+    &::after {
+      background-color: $block-background-color !important;
+    }
+  }
+  .ui.large.button {
+    font-family: $main-font;
+    color: $text-main-color;
+    background-color: $interactive-components-bg;
+    font-size: 1.28571429rem;
+  }
+}

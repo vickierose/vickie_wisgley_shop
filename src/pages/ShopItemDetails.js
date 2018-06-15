@@ -16,17 +16,19 @@ class ShopItemDetails extends Component {
           <Grid.Column width={6}>
           <Image src={data.imageUrl} size='large'/>
           </Grid.Column>
-          <Grid.Column width={10}>
+          <Grid.Column width={10} verticalAlign="middle">
             <Header as='h2'>{data.name}</Header>
-            <p>
+            <p className="item-description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
               et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
               aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
               dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
               officia deserunt mollit anim id est laborum.
             </p>
-            <Label tag>{`${data.price} ${data.currency}`}</Label>
-            <Button >Купить</Button>
+            <div className="price-buy-button-wrapper">
+              <Label tag size="big">{`${data.price} ${data.currency}`}</Label>
+              <Button size="large">Купить</Button>
+            </div>
           </Grid.Column>
         </Grid>
       </Container>
