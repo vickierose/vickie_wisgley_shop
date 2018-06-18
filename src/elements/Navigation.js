@@ -20,7 +20,7 @@ export default class Navigation extends Component {
         <Menu.Item as={Nav} to="/contacts" name='Contacts' ><Icon name="address card"/><Responsive minWidth={768}>Contacts</Responsive></Menu.Item>
 
         <Menu.Menu position='right'>
-        <Menu.Item><Icon name="shopping cart"/></Menu.Item>
+        <Menu.Item onClick={this.props.openCart}><Icon name="shopping cart"/></Menu.Item>
         </Menu.Menu>
       </Menu>
       </div>
