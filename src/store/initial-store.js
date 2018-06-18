@@ -1,6 +1,6 @@
 const initialStore = {
   shop: {},
-  // cart: [],
+  cart: [],
   categories: {}
 };
 

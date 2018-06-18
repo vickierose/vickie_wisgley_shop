@@ -12,7 +12,7 @@ export const getAllCategoriesRequest = () => ({
 
 export const getAllCategoriesSuccess = data => ({
   type:GET_ALL_CATEGORIES_SUCCESS,
-  data: data
+  data
 });
 
 export const getShoppingItemsFailure = err => ({
