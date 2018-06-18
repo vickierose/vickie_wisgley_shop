@@ -1,17 +1,15 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
 import Shop from '../pages/Shop';
-// import {getShoppingItems} from '../actions/shop';
+import {addItem} from '../actions/cart';
 import {getAllCategories, selectCategory, unselectCategory} from '../actions/categories'
 
 const mapStateToProps = state => ({
   shop: state.shop,
   categories: state.categories,
+  cart: state.cart
 });
 const mapDispatchToProps = dispatch => ({
-  // getShoppingItems() {
-  //   return dispatch(getShoppingItems())
-  // },
   getAllCategories() {
     return dispatch(getAllCategories())
   },
@@ -20,6 +18,9 @@ const mapDispatchToProps = dispatch => ({
   },
   unselectCategory(category) {
     return dispatch(unselectCategory(category))
+  },
+  addItemToCart(item){
+    return dispatch(addItem(item))
   }
 });
 

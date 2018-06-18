@@ -28,11 +28,11 @@ export default class Shop extends Component {
   getShopItems() {
     if (this.state && this.state.filteredShoppingItems.length){
       return this.state.filteredShoppingItems.map(item => (
-        <ShopItem item={item} key={item.id} match={this.props.match}/>
+        <ShopItem item={item} key={item.id} match={this.props.match} addItemToCart={this.props.addItemToCart}/>
       ))
     } else if (this.props.shop && this.props.shop.data) {
       return this.props.shop.data.map(item => (
-        <ShopItem item={item} key={item.id} match={this.props.match}/>
+        <ShopItem item={item} key={item.id} match={this.props.match} addItemToCart={this.props.addItemToCart}/>
       ))
     }
   }
@@ -97,7 +97,10 @@ export default class Shop extends Component {
   render() {
     return (
       <div className="page">
-        <Route path={`${this.props.match.url}/:itemId`} component={ShopItemDetails}/>
+        <Route 
+          path={`${this.props.match.url}/:itemId`}
+          render={({match}) => { return (<ShopItemDetails addItemToCart={this.props.addItemToCart} match={match}/>)}}
+        />
         <Route exact path={this.props.match.url} render={() => this.ShopLanding} />
       </div> 
     );

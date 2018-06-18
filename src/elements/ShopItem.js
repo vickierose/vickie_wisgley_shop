@@ -1,16 +1,19 @@
 import React from 'react';
-import {Card, Image, Button, Label} from 'semantic-ui-react';
+import {Card, Image, Button, Label, ButtonContent} from 'semantic-ui-react';
 import Nav from './NavHelper';
 import './ShopItem.scss';
 
-const ShopItem = ({item, match}) => {
+const ShopItem = ({item, match, addItemToCart}) => {
   return (
-    <Card as={Nav} to={`${match.url}/${item.id}`} className='shop-item'>
-      <Image src={item.imageUrl} className="shop-item-picture"/>
-      <Card.Content>
+    <Card className='shop-item'>
+      <Card.Content as={Nav} to={`${match.url}/${item.id}`}>
+        <Image src={item.imageUrl} className="shop-item-picture"/>
         <Card.Header as='h3'>{item.name}</Card.Header>
       </Card.Content>
-      <Button as='div' attached="bottom" className="price-tag-btn">{`${item.price} ${item.currency}`}</Button>
+      <Button animated='vertical' as='div' attached="bottom" className="price-tag-btn" onClick={() => {addItemToCart(item)}}>
+        <Button.Content visible>{`${item.price} ${item.currency}`}</Button.Content>
+        <Button.Content hidden>Купить</Button.Content>
+      </Button>
     </Card>
   )
 };

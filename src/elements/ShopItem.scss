@@ -2,14 +2,18 @@
 
 .ui.cards > .ui.card.shop-item {
   background-color: $block-background-color;
+  .content {
+    height: 95%;
+  }
   .header {
     font-family: $main-font;
     white-space: nowrap;
     overflow: hidden;
   }
   .shop-item-picture {
-    min-height: 80%;
-    max-height: 80%;
+    min-height: 90%;
+    max-height: 90%;
+    margin: 5px auto;
   }
   .price-tag-btn {
     background-color: $block-background-color;

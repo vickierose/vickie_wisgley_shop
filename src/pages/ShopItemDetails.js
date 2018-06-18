@@ -51,7 +51,7 @@ class ShopItemDetails extends Component {
             </p>
             <div className="price-buy-button-wrapper">
               <Label tag size="big">{`${data.price} ${data.currency}`}</Label>
-              <Button size="large">Купить</Button>
+              <Button size="large" onClick={() =>{this.props.addItemToCart(data)}}>Купить</Button>
             </div>
           </Grid.Column>
         </Grid>
