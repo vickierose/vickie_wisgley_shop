@@ -12,7 +12,7 @@ script:
 
 before_deploy:
   - test $TRAVIS_TEST_RESULT = 0
-    && bash cp -f .gitignore-heroku .gitignore
+    && cp -f .gitignore-heroku .gitignore
 
 deploy: 
   provider: heroku
