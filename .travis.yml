@@ -13,6 +13,8 @@ script:
 before_deploy:
   - test $TRAVIS_TEST_RESULT = 0
     && cp -f .gitignore-heroku .gitignore
+    && git add .
+    && git commit -m "build ${TRAVIS_BUILD_NUMBER}"
 
 deploy: 
   provider: heroku
